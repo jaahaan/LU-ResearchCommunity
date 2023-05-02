@@ -1,0 +1,153 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Add styles here
+footer {
+  background-color: $primaryColor;
+}
+.footer {
+  &-info {
+    padding-top: 45px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $borderColor;
+    display: flex;
+    justify-content: space-between;
+    &__item {
+      margin-bottom: 25px;
+      h3 {
+        color: $inverseColor;
+        font-size: 1.5em;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #cdcdcd;
+        margin-bottom: 15px;
+      }
+      ul {
+        li {
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      &--icon {
+        li {
+          display: inline-block;
+          transition: 0.5s ease;
+          &:not(:last-child) {
+            margin-right: 10px;
+            margin-bottom: 0;
+          }
+          &:hover {
+            color: #fff;
+          }
+          a {
+            i {
+              color: #cdcdcd;
+            }
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-copyright {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    p {
+      font-size: 16px;
+      color: #cdcdcd;
+      text-align: center;
+    }
+  }
+}
+
+// RESPONSIVE STARTS
+
+@include breakpoint-max(991px) {
+  .footer {
+    &-info {
+      &__item {
+        ul {
+          li:not(:last-child) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint-max(767px) {
+  .footer {
+    &-info {
+      padding-top: 30px;
+      padding-bottom: 5px;
+      // padding-left: 10px;
+      // padding-right: 10px;
+      &__item {
+        h3 {
+          font-size: 1.125em;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 0.875em;
+          margin-bottom: 10px;
+        }
+        &--icon {
+          font-size: 12px;
+          i {
+            &:not(:last-child) {
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+    }
+    &-copyright {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+@include breakpoint-max(575px) {
+  .footer {
+    &-info {
+      flex-direction: column;
+      &__item {
+        h3 {
+          margin-bottom: 8px;
+        }
+        p {
+          font-size: 0.75em;
+          margin-bottom: 8px;
+        }
+      }
+    }
+    &-copyright {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      p {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+@include breakpoint-max(480px) {
+  // .footer {
+  //   &-info {
+  //     &__content {
+  //       .footer-info__item {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+  // }
+}

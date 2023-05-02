@@ -1,0 +1,190 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.login-section {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 30%,
+    #cdcdcd 50%,
+    #cdcdcd 100%
+  );
+  //TB RL
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 500px;
+      max-height: 500px;
+      border-radius: 10px;
+      margin: 1rem;
+    }
+  }
+  .right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form {
+      width: 500px;
+      margin: 1rem;
+      padding: 1.25rem;
+      border-radius: 10px;
+      h1 {
+        padding-bottom: 1rem;
+        text-align: center;
+        font-size: 2rem;
+        color: $grayColor;
+      }
+      a {
+        color: $link;
+        i {
+          margin-left: 0.5rem;
+          color: $upVote;
+        }
+      }
+      .password {
+        // width: 100%;
+        display: flex;
+        align-items: center;
+        input {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        .icon {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border: 1px solid #ffffff;
+          height: 35.7px;
+          width: 35.7px;
+          display: flex;
+
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+      }
+
+      .otp-input {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        input[type="text"] {
+          width: 45px;
+          height: 45px;
+          margin: 0 10px;
+          border: 1px solid $headerBg;
+          border-radius: 5px;
+          text-align: center;
+          font-size: 1.25rem;
+          padding: 8px;
+          font-weight: bold;
+          outline: none;
+          transition: all 0.1s;
+          &:focus {
+            border: 2px solid $linkActive;
+            box-shadow: 0 0 1px 1px $linkActive;
+          }
+        }
+      }
+
+      .topButton {
+        text-align: center;
+        margin-bottom: 10px;
+        button {
+          // margin-right: 10px;
+          width: 49%;
+          &:not(:last-child) {
+            margin-right: 1%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint-max(992px) {
+  .login-section {
+    .left {
+      img {
+        max-width: 405px;
+        max-height: 405px;
+      }
+    }
+    .right {
+      .form {
+        width: 405px;
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+@include breakpoint-max(767px) {
+  .login-section {
+    flex-direction: column;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #ffffff 30%,
+      #cdcdcd 50%,
+      #cdcdcd 100%
+    );
+    .left {
+      width: 100%;
+      img {
+        max-width: 500px;
+        max-height: 500px;
+      }
+    }
+    .right {
+      width: 100%;
+      margin-bottom: 1rem;
+      .form {
+        width: 500px;
+        margin: 0;
+      }
+    }
+  }
+}
+@include breakpoint-max(575px) {
+  .login-section {
+    .left {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .right {
+      .form {
+        width: 100%;
+        margin: 0;
+        h1 {
+          font-size: 1.5rem;
+        }
+        .otp-input {
+          margin: 15px;
+          input[type="text"] {
+            width: 40px;
+            height: 40px;
+            margin: 0 6px;
+
+            font-size: 1.1rem;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

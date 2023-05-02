@@ -1,0 +1,56 @@
+// Add variables here
+@use "./mixins" as *;
+
+:root {
+  --nav-height: 60px;
+
+  // @include breakpoint-max(767px) {
+  //   --nav-height: 60px;
+  // }
+}
+
+$titleRed: #bc5d5d;
+$inverseColor: #ffffff;
+$colorWhite: #ffffff;
+
+$primaryColor: #566d7e;
+$headerBg: #78909c;
+$secondaryColor: #566d7e;
+$btnHover: #566d7e;
+$linkActive: #c3d136;
+
+// $secondaryColor: #81d4fa;
+// $btnHover: #81d4fa;
+// $linkActive: #81d4fa;
+
+// $primaryColor: #7da2a9;
+// $headerBg: #a3babe;
+// $secondaryColor: #7da2a9;
+// $btnHover: #6aa5b1;
+// $linkActive: #3d3b3b;
+$linkHover: #3d3b3b;
+$linkColor: #ffffff;
+$link: #58a6ff;
+$grayColor: #3a3a3a;
+$borderColor: #e4e6eb;
+$gray: #3d3b3b;
+$bgWhite: #ffffff;
+$info: #76cbd6;
+// $btnHover: #5a606d;
+$random: #444253;
+$hover: #cdcdcd;
+$upVote: #4caf50;
+$downVote: #ed2939;
+$secondary-icon: #b0b3b8;
+// $secondary-text: #b0b3b8;
+// $secondary-icon: #65676b;
+// $secondary-text: #65676b;
+$wash: #e4e6eb;
+$web-wash: #f0f2f5;
+$notification-badge: #e41e3f;
+// $primary-icon: #050505;
+$primary-text: #050505;
+$accent: #1876f2;
+$primary-icon: #e4e6eb;
+// --primary-text: #E4E6EB;
+$secondary-text: #65676b;

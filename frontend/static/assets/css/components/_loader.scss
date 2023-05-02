@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.loader-lg {
+  text-align: center;
+  margin: 20px 0px;
+  font-size: 70px;
+  color: #0c0c0c;
+}
+.loader-sm {
+  text-align: center;
+  // margin: 1rem;
+  font-size: 30px;
+  color: #0c0c0c;
+}
+.loader {
+  h1 {
+    width: 100%;
+    height: 30px;
+    background-color: #c0c0c0;
+    border-radius: 5px;
+  }
+}

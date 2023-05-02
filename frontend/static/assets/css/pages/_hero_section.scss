@@ -1,0 +1,336 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+//----------------Hooper Carousel----------------\\
+
+.hero-section {
+  .hooper {
+    height: auto !important;
+    min-height: 300px;
+    &:not(.no-margin) {
+      height: 100% !important;
+      width: calc(100% + 2 * 10px) !important;
+      margin: 0 -10px;
+      .hooper-slide {
+        padding: 0 10px !important;
+      }
+    }
+  }
+}
+
+/*************** Home CSS ***************/
+
+//------------------Hero----------------\\
+
+.hero {
+  &-section {
+    opacity: 0.9;
+    height: calc(100vh - var(--nav-height));
+    display: flex;
+    padding: 20px;
+    /*background-image: linear-gradient(angle, color-stop1, color-stop2);*/
+    background: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #ffffff 30%,
+      #cdcdcd 50%,
+      #cdcdcd 100%
+    );
+    .hooper {
+      width: 50%;
+    }
+    .right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-details {
+        &--area {
+          padding-left: 150px;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: #101820ff;
+            height: 2px;
+            width: 100px;
+            top: 20px;
+            left: 20px;
+          }
+
+          &---subtitle {
+            // font-size: 35px;
+            margin-bottom: 20px;
+            // color: #101820ff;
+            color: #26302b;
+
+            font-weight: 600;
+            font-size: 40px;
+            text-transform: uppercase;
+          }
+
+          &---title {
+            margin-bottom: 20px;
+            // color: #101820ff;
+            background: -webkit-linear-gradient($primaryColor, $linkActive);
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 6px transparent;
+            color: #f2f8f5;
+            font-family: Poppins, sans-serif;
+            font-weight: 600;
+            font-size: 50px;
+            // line-height: 127px;
+            text-transform: uppercase;
+            span {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    &__bg {
+      background-size: cover;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.header-info {
+  background-color: #f2f2f2;
+  &-content {
+    display: flex;
+    &-item {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 8px;
+      width: 33.33%;
+      text-align: center;
+      justify-content: space-between;
+      color: $primaryColor;
+      line-height: 1.3;
+    }
+
+    &-item:not(:last-child) {
+      border-right: 1px solid white;
+    }
+  }
+}
+.vue-typer {
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+.vue-typer .custom.char.typed {
+  // color: #607D8B;
+  // color: #195190ff;
+  font-weight: 700;
+  // font-size: 30px;
+  // line-height: 70px;
+  background: -webkit-linear-gradient(-66deg, #195190ff 10%, $linkActive 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0;
+  -webkit-text-stroke-color: transparent;
+}
+.vue-typer .custom.char.selected {
+  // color: #607D8B;
+  color: #195190ff;
+  font-weight: 700;
+  background-color: $headerBg;
+  // text-decoration: line-through;
+}
+
+.vue-typer .custom.caret {
+  // display: none;
+  color: #195190ff;
+}
+//----------------Responsive----------------\\
+
+@include breakpoint-max(991px) {
+  // Hero
+  .hero {
+    &-section {
+      .right {
+        &-details {
+          margin-bottom: 50px;
+
+          &--area {
+            padding-left: 137px;
+            position: relative;
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100px;
+              top: 20px;
+              left: 20px;
+            }
+
+            &---subtitle {
+              font-size: 30px;
+              // margin-bottom: 20px;
+            }
+
+            &---title {
+              font-size: 35px;
+              span {
+                display: block;
+              }
+            }
+          }
+
+          &--text {
+            font-size: 18px;
+            font-weight: 400;
+
+            &:not(:last-child) {
+              margin-bottom: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint-max(767px) {
+  //Hero
+  .hero {
+    &-section {
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffffff 30%,
+        #cdcdcd 50%,
+        #cdcdcd 100%
+      );
+      // flex-wrap: wrap;
+      flex-flow: column;
+
+      .hooper {
+        width: 100%;
+        height: 60% !important;
+      }
+      .right {
+        width: 100%;
+        height: 40%;
+        &-details {
+          align-items: center;
+          justify-content: center;
+          &--area {
+            // padding-left: 100px;
+            margin-top: 50px;
+            &::before {
+              width: 68px;
+              top: 12px;
+              left: 55px;
+            }
+
+            &---subtitle {
+              font-size: 18px;
+              margin-bottom: 10px;
+            }
+
+            &---title {
+              font-size: 25px;
+              margin-bottom: 10px;
+              font-weight: 100;
+            }
+          }
+
+          &--text {
+            font-size: 16px;
+
+            &:not(:last-child) {
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint-max(575px) {
+  .bg {
+    /*background-image: linear-gradient(angle, color-stop1, color-stop2);*/
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #ffffff 30%,
+      #a3babe 30%,
+      #a3babe 100%
+    );
+  }
+}
+@include breakpoint-max(480px) {
+  .hero {
+    &-section {
+      &-details {
+        &--area {
+          padding-left: 50px;
+
+          &::before {
+            width: 45px;
+            top: 7px;
+          }
+
+          &---subtitle {
+            font-size: 14px;
+            margin-bottom: 8px;
+          }
+
+          &---title {
+            font-weight: 100;
+          }
+        }
+
+        &--text {
+          font-size: 14px;
+
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint-min(1600px) {
+  .hero {
+    &-section {
+      height: 735px;
+    }
+  }
+}
+@include breakpoint-min(992px) {
+  // Header Info
+  .header {
+    &-info {
+      &-content {
+        &-item {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 14px;
+          width: 33.33%;
+          text-align: center;
+          justify-content: space-between;
+          color: $primaryColor;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

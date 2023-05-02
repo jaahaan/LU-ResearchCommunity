@@ -1,0 +1,10 @@
+@charset "UTF-8";
+@import url(../font/font.css);
+:root {
+  --nav-height: 80px;
+}
+@media (max-width: 767px) {
+  :root {
+    --nav-height: 55px;
+  }
+}

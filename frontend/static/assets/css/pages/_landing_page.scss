@@ -1,0 +1,87 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+._card {
+  display: flex;
+  margin: auto;
+  padding: 60px 50px;
+  justify-content: center;
+  background: $primaryColor;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  color: #fbf7ff;
+}
+
+.background {
+  animation-name: fadeIn, rotate;
+  animation-duration: 5s, 360s;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: linear, linear;
+  -webkit-animation-name: fadeIn, rotate;
+  -webkit-animation-duration: 5s, 360s;
+  -webkit-animation-iteration-count: 1, infinite;
+  -webkit-animation-timing-function: linear, linear;
+}
+
+.quote-section {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  .image {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    height: 70%;
+    width: 500px;
+    border-radius: 10px;
+  }
+  h1 {
+    text-align: center;
+  }
+}
+.rt-title {
+  background-color: $primaryColor;
+}
+.about {
+  background-color: #fbf7ff;
+  border-radius: 5px;
+  width: 100%;
+  color: #fbf7ff;
+  border: 1px solid #98978b;
+}
+.about-title {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1rem;
+  padding: 50px;
+  color: #474554;
+}
+
+.images {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.hooper {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    margin-bottom: 20px;
+  }
+  .quote-section {
+    &:not(#about) {
+      flex-direction: column-reverse;
+    }
+    h1 {
+      font-size: 20px;
+    }
+  }
+}

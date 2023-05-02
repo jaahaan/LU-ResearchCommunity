@@ -1,0 +1,98 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Time Card CSS
+.time {
+  &-card {
+    border: 1px solid $borderColor;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    h3 {
+      font-size: 1.5em;
+
+      font-weight: 600;
+      // color: $secondaryColor;
+    }
+    &__counter {
+      margin-top: 0.5em;
+      li {
+        display: inline-block;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 51px rgba(228, 228, 228, 0.55);
+        margin-left: 0.3em;
+        margin-right: 0.3em;
+        width: 60px;
+        padding: 10px;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: $grayColor;
+        span {
+          display: inline-block;
+          color: $primaryColor;
+          font-weight: 900;
+          font-size: 1.1em;
+        }
+      }
+    }
+    &__link {
+      font-size: 1.2em;
+      text-decoration: underline;
+    }
+  }
+}
+
+@include breakpoint-max(991px) {
+  .time {
+    &-card {
+      font-size: 0.9em;
+      h3 {
+        font-size: 1.3em;
+      }
+
+      &__counter {
+        li {
+          width: 40px;
+          span {
+            font-size: 1em;
+          }
+        }
+      }
+      &__link {
+        font-size: 1em;
+      }
+    }
+  }
+}
+@include breakpoint-max(767px) {
+  .time {
+    &-card {
+      h3 {
+        font-size: 1em;
+      }
+
+      &__counter {
+        li {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+@include breakpoint-min(1400px) {
+  .time {
+    &-card {
+      &__counter {
+        li {
+          width: 60px;
+          span {
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+  }
+}

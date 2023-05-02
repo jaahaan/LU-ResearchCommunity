@@ -1,0 +1,417 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.profile {
+  &-header {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    border: 1px solid transparent;
+    overflow: hidden;
+    background: $bgWhite;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    img {
+      width: auto;
+      height: 100%;
+      background-size: cover;
+    }
+    &-cover {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      padding-top: 70px;
+      i {
+        color: #fff;
+        font-size: 40px;
+        cursor: pointer;
+      }
+    }
+    &:hover .profile-header-cover {
+      display: block;
+    }
+    &-skeleton {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      line-height: 100px;
+      overflow: hidden;
+      background: #a7a7a7;
+      border-radius: 50%;
+    }
+    &-bg {
+      /*background-image: linear-gradient(angle, color-stop1, color-stop2);*/
+      background: linear-gradient(
+        180deg,
+        $headerBg 0%,
+        $headerBg 80px,
+        $web-wash 80px,
+        $web-wash 100%
+      );
+    }
+  }
+  &-info {
+    &-skeleton {
+      justify-content: center;
+      align-items: center;
+
+      h4 {
+        width: 80%;
+        height: 20px;
+        background-color: #c0c0c0;
+        text-align: center;
+        border-radius: 5px;
+        margin: auto;
+      }
+      p {
+        width: 70%;
+        height: 14px;
+        background-color: #a7a7a7;
+        text-align: center;
+        border-radius: 5px;
+        margin: auto;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+.profile-section {
+  display: flex;
+  gap: 25px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  .menu-item {
+    width: 100%;
+    &-box {
+      // box-shadow: 0px 0px 3px $headerBg;
+      border-radius: 2px;
+      padding: 20px;
+      margin-bottom: 10px;
+      &:not(:last-child) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .profile-details {
+        width: 88%;
+        margin-right: 20px;
+        .title {
+          font-size: 16px;
+          font-weight: 400;
+          color: $primaryColor;
+          border: 0;
+          padding: 0;
+          margin-bottom: 20px;
+        }
+        .sub-title {
+          font-size: 17px;
+          font-weight: 400;
+          color: #3e3e3e;
+          margin-bottom: 5px;
+        }
+      }
+      .vote {
+        align-items: end;
+        margin: auto;
+        text-align: center;
+        i {
+          font-size: 2rem;
+          color: #cdcdcd;
+          margin: 2px 0px;
+          cursor: pointer;
+        }
+        .upActive {
+          color: #4caf50;
+        }
+        .downActive {
+          color: #ed2939;
+        }
+      }
+      .footer {
+        display: flex;
+        width: 100%;
+        border-top: 2px dashed $secondaryColor;
+        padding-top: 15px;
+        margin-top: 17px;
+        justify-content: space-between;
+        align-items: center;
+        P {
+          &:not(:first-child) {
+            a {
+              margin-left: 0.25em !important;
+              font-size: 1.25em;
+              font-weight: 500;
+              img {
+                width: 1em;
+              }
+              &:hover {
+                text-decoration: underline;
+                img {
+                  color: $secondaryColor !important;
+                }
+              }
+            }
+          }
+        }
+        .active {
+          color: $btnHover !important;
+          font-weight: bolder;
+        }
+      }
+    }
+    &--title {
+      font-size: 24px;
+      font-weight: 500;
+      // border-bottom: 2px dashed #e3e3e3;
+      border-bottom: 2px dashed $secondaryColor;
+      padding-bottom: 15px;
+      margin-bottom: 17px;
+    }
+  }
+}
+
+.profile-menu {
+  width: 45%;
+  height: fit-content;
+  box-shadow: 0px 0px 3px $headerBg;
+  border-radius: 10px !important;
+  overflow: hidden;
+  /*background-image: linear-gradient(angle, color-stop1, color-stop2);*/
+  background: linear-gradient(
+    180deg,
+    $headerBg 0%,
+    $headerBg 80px,
+    $bgWhite 80px,
+    $bgWhite 100%
+  );
+  border-radius: 5px;
+
+  figure {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 35px;
+    img {
+      border-radius: 50%;
+      max-width: 90px;
+    }
+  }
+  .header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+  }
+  .settings {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    i {
+      font-size: 1em;
+      line-height: 1;
+      margin-left: 10px;
+      color: $bgWhite;
+    }
+    a {
+      i {
+        font-size: 0.8em;
+      }
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 5px 0;
+  }
+  .nuxt-link-exact-active:not(.profileNav) {
+    background-color: $primaryColor;
+    i {
+      color: $inverseColor;
+    }
+    h4 {
+      color: $inverseColor;
+    }
+  }
+  &--list {
+    margin-top: 15px;
+    // border-top: 1px solid #cdcdcd;
+    background: $bgWhite;
+    border-radius: 10px !important;
+    overflow: hidden;
+    &---item {
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+
+      &:last-child {
+        padding-bottom: 10px;
+      }
+      .menu-link {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 20px 25px;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: $primaryColor;
+          i {
+            color: $inverseColor;
+          }
+          h4 {
+            color: $inverseColor;
+          }
+        }
+        &:active {
+          background-color: $primaryColor;
+          i {
+            color: $inverseColor;
+          }
+          h4 {
+            color: $inverseColor;
+          }
+        }
+        &.active {
+          background-color: $primaryColor;
+          i {
+            color: $inverseColor;
+          }
+          h4 {
+            color: $inverseColor;
+          }
+        }
+        i {
+          font-size: 22px;
+          color: $primaryColor;
+          margin-right: 10px;
+        }
+        h4 {
+          font-size: 17px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+//description
+.profile-description {
+  .sub-title {
+    font-size: 17px;
+    font-weight: 400;
+    color: #3e3e3e;
+    margin-bottom: 5px;
+  }
+}
+
+// Responsive
+
+@include breakpoint-max(1199px) {
+  .profile {
+    &-menu {
+      &--list {
+        &---item {
+          i {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint-max(991px) {
+  .profile {
+    &-section {
+      // box-shadow: 0px 0px 3px $headerBg;
+      display: block;
+      gap: 0;
+      .menu-item {
+        border-radius: 0;
+        // padding: 30px;
+        &-box {
+          width: 100%;
+          box-shadow: none;
+          padding: 0;
+        }
+      }
+    }
+    &-menu {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+}
+@include breakpoint-max(767px) {
+  .profile {
+    &-section {
+      padding-bottom: 0;
+      .menu-item {
+        padding-top: 10px;
+        &-box {
+          .profile-details {
+            margin-right: 7px;
+            .sub-title {
+              font-size: 15px;
+            }
+          }
+          .vote {
+            i {
+              font-size: 1.7rem;
+            }
+          }
+        }
+        &--title {
+          font-size: 20px;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    &-menu {
+      figure {
+        text-align: center;
+        margin-bottom: 20px;
+        padding-top: 35px;
+      }
+      .header {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 13px;
+      }
+      &--list {
+        &---item {
+          .menu-link {
+            padding: 18px 15px;
+            i {
+              font-size: 20px;
+            }
+            h4 {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    &-description {
+      .sub-title {
+        font-size: 15px;
+      }
+    }
+  }
+}

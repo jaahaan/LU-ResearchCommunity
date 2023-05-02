@@ -1,0 +1,159 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.teacher {
+  &-section {
+    max-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    &--table {
+      overflow: hidden;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+
+      .table {
+        padding: 0;
+        margin: 0;
+        border-radius: 10px;
+        background-color: #fff;
+        th {
+          text-align: center;
+          white-space: nowrap;
+        }
+        td {
+          white-space: nowrap;
+          text-align: center;
+          font-size: 16px;
+          color: #3e3e3e;
+          vertical-align: middle;
+          img {
+            max-width: 100px;
+            max-height: 150px;
+          }
+          i {
+            font-size: 20px;
+            color: #cdcdcd;
+            font-weight: 700;
+            cursor: pointer;
+            &.active {
+              color: $upVote;
+              background-color: $upVote;
+            }
+          }
+        }
+        &-image {
+          // margin: 5px 0px;
+          justify-content: center;
+          align-items: center;
+
+          display: flex;
+          // display: inline-block;
+          // width: 150px;
+          height: 150px;
+          text-align: center;
+          // line-height: 60px;
+          border: 1px solid transparent;
+          border-radius: 5px;
+          overflow: hidden;
+          background: #fff;
+          position: relative;
+          // margin-right: 1rem;
+          // margin-top: 1rem;
+          // margin-bottom: 1rem;
+
+          // img {
+          //   width: 100%;
+          //   height: 100%;
+          // }
+          &-cover {
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(88, 83, 83, 0.6);
+            padding-top: 55px;
+            i {
+              color: #fff;
+              font-size: 40px;
+              font-weight: 800;
+              cursor: pointer;
+              // margin: 0 2px;
+            }
+          }
+          &:hover .table-image-cover {
+            display: block;
+          }
+          // img {
+          //   width: 150px;
+          //   height: 150px;
+          //   margin-right: 1rem;
+          // }
+        }
+      }
+
+      &--skeleton {
+        h4 {
+          border-radius: 5px;
+          width: 28%;
+          height: 35px;
+          background-color: #c0c0c0;
+        }
+        button {
+          border-radius: 20px;
+          min-width: 170px;
+          height: 40px;
+          background-color: #c0c0c0 !important;
+        }
+        .table {
+          padding: 0;
+          margin: 0;
+          border-radius: 5px;
+          th {
+            text-align: center;
+            white-space: nowrap;
+            width: 20%;
+            height: 35px;
+            background-color: #c0c0c0;
+          }
+          td {
+            white-space: nowrap;
+            text-align: center;
+            width: 20%;
+            height: 35px;
+            background-color: #c0c0c0;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@include breakpoint-max(767px) {
+  .teacher {
+    &-section {
+      &--table {
+        .table {
+          th {
+            font-size: 14px;
+          }
+          td {
+            font-size: 14px;
+            img {
+              max-width: 80px;
+            }
+            i {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

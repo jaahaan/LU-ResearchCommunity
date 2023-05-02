@@ -1,0 +1,25 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+
+// Add Colors here
+body {
+  // background-color: #f4f4f4;
+  background-color: $web-wash;
+}
+
+h1 {
+  color: #ffffff;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #050505;
+}
+p {
+  color: #050505;
+}
+a {
+  color: $link;
+}

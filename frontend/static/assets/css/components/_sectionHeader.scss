@@ -1,0 +1,121 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Add styles here
+.section-header {
+  // border-bottom: 1px solid #f2f2f2;
+  padding-top: 3px;
+  padding-bottom: 26px;
+  //   margin-bottom: 0.5em;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 1em;
+    padding-right: 10px;
+    margin-bottom: 7px;
+  }
+  h3 {
+    color: $grayColor;
+  }
+  i {
+    color: #000;
+    font-size: 20px;
+  }
+  &__skeleton {
+    // border-bottom: 1px solid #f2f2f2;
+    margin-top: 5px;
+    margin-bottom: 28px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    h3 {
+      border-radius: 5px;
+      width: 40%;
+      height: 32px;
+      background-color: #c0c0c0;
+    }
+    i {
+      width: 32px;
+      height: 32px;
+      background-color: #c0c0c0 !important;
+      border-radius: 5px;
+      padding-left: 10px;
+    }
+  }
+
+  &__action {
+    margin-bottom: 7px;
+    &--tab {
+      li {
+        font-size: 14px;
+        display: inline-block;
+        cursor: pointer;
+        margin-bottom: 6px;
+        &.active {
+          color: $secondaryColor;
+        }
+        &:not(:last-child) {
+          padding-right: 15px;
+        }
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+    a {
+      font-size: 1.1em;
+      display: inline-flex;
+      align-items: center;
+      i {
+        margin-left: 5px;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+.dept-header {
+  padding-bottom: 0.5em;
+  h2 {
+    font-size: 2em;
+    padding-right: 10px;
+    margin-bottom: 7px;
+    text-align: center;
+  }
+}
+
+//responsive
+
+@include breakpoint-min(1400px) {
+  .section-header {
+    h2 {
+      font-size: 2.5em;
+    }
+  }
+
+  .dept-header {
+    h2 {
+      font-size: 2.5em;
+    }
+  }
+}
+@include breakpoint-max(767px) {
+  .section-header {
+    margin-bottom: 1.5em;
+    padding-bottom: 0.1em;
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 3px;
+    }
+  }
+  .dept-header {
+    margin-bottom: 1.5em;
+    padding-bottom: 0.1em;
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 3px;
+    }
+  }
+}

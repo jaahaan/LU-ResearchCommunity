@@ -1,0 +1,181 @@
+// Add variables here
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.connection {
+  &--item {
+    background-color: #fff;
+    box-shadow: 0px 0px 3px #cdcdcd;
+    // border: 1px solid $borderColor;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    .post-title {
+      font-weight: 500;
+      border-bottom: 2px dashed $secondaryColor;
+      padding-bottom: 15px;
+      margin-bottom: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      i {
+        font-size: 16px;
+        color: $bgWhite;
+        padding: 6px;
+        border-radius: 50%;
+        margin-right: 0.75rem;
+      }
+      .green {
+        background-color: $upVote;
+      }
+      .red {
+        background-color: $downVote;
+      }
+      a {
+        font-size: 12px;
+        text-align: center;
+      }
+      h5 {
+        font-size: 22px;
+      }
+    }
+    .post-content {
+      font-weight: 500;
+      padding-bottom: 15px;
+      margin-bottom: 17px;
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 16px;
+        color: $bgWhite;
+        padding: 6px;
+        border-radius: 50%;
+        background-color: $secondaryColor;
+        margin-right: 0.75rem;
+      }
+    }
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      box-shadow: 0px 0px 3px #cdcdcd;
+      border-radius: 10px;
+      padding: 12px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      .content {
+        display: flex;
+        align-items: center;
+        &--image {
+          width: 70px;
+          height: 70px;
+          text-align: center;
+          background: $bgWhite;
+          border-radius: 50%;
+          margin-right: 8px;
+          overflow: hidden;
+          img {
+            width: auto;
+            height: 100%;
+            background-size: cover;
+            // border-radius: 50%;
+          }
+        }
+
+        h4 {
+          font-size: 1.0625rem;
+          font-weight: 600;
+        }
+        p {
+          font-size: 16px;
+          color: $secondary-text;
+          font-weight: 400;
+        }
+      }
+      .btn {
+        font-size: 1em;
+        font-weight: 500;
+        transition: 0.3s linear;
+        &__border {
+          background-color: transparent;
+          padding: 0.5em 1.5em;
+          border-radius: 20px;
+          background-color: $secondaryColor;
+          min-width: 125px;
+          color: $bgWhite;
+        }
+        &__icon {
+          i {
+            padding: 0.75rem 1rem;
+            border-radius: 20px;
+            background-color: $secondaryColor;
+            color: $bgWhite;
+          }
+        }
+      }
+    }
+  }
+
+  &--skeleton {
+    &--item {
+      border: 1px solid $borderColor;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      background-color: #f4f4f4;
+
+      .post-title-skeleton {
+        border-bottom: 2px dashed #c0c0c0;
+        padding-bottom: 15px;
+        margin-bottom: 17px;
+        p {
+          border-radius: 5px;
+          width: 60%;
+          height: 30px;
+          background-color: #c0c0c0;
+        }
+      }
+      .post-sub-title-skeleton {
+        margin: 5px 0px;
+        width: 100%;
+        p {
+          width: 100%;
+          height: 85px;
+          background-color: #c0c0c0;
+          border-radius: 5px;
+        }
+        span {
+          width: 40%;
+          height: 24px;
+          background-color: #c0c0c0 !important;
+          border-radius: 5px;
+        }
+        a {
+          border-radius: 20px;
+          min-width: 125px;
+          height: 40px;
+          background-color: #c0c0c0 !important;
+          margin-right: 1rem !important;
+          border-radius: 5px;
+        }
+      }
+      .footer {
+        display: flex;
+        width: 100%;
+        border-top: 2px dashed #c0c0c0;
+        padding-top: 15px;
+        margin-top: 17px;
+        align-items: center;
+        a {
+          border-radius: 20px;
+          min-width: 125px;
+          height: 35px;
+          background-color: #c0c0c0 !important;
+          margin-right: 1rem !important;
+        }
+      }
+    }
+  }
+}
